@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * @category  Syncit Group Custom Contact Form
+ * @package   SyncitGroup_SgForm
+ * @copyright Copyright (c) 2021 Bhavin
+ * @author    Bhavin
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="SyncitGroup_SgForm::sgformgroup" title="SG From" module="SyncitGroup_SgForm" sortOrder="51" resource="SyncitGroup_SgForm::sgform"/>
+
+		<add id="SyncitGroup_SgForm::sgform" title="Contact From" module="SyncitGroup_SgForm" 
+				sortOrder="10" action="sgform/contacts" resource="SyncitGroup_SgForm::sgform" 
+				parent="SyncitGroup_SgForm::sgformgroup"/>
+
+    </menu>
+</config>
+

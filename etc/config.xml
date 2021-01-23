@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * @category  Syncit Group Custom Contact Form
+ * @package   SyncitGroup_SgForm
+ * @copyright Copyright (c) 2021 Bhavin
+ * @author    Bhavin
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sgform>
+            <general>
+                <enable>0</enable>
+                <sendemail>0</sendemail>
+            </general>				
+        </sgform>
+		<customer>
+            <captcha>
+                <shown_to_logged_in_user>
+                    <sgform_captcha_form_1>1</sgform_captcha_form_1>
+                </shown_to_logged_in_user>
+                <always_for>
+                    <sgform_captcha_form_1>1</sgform_captcha_form_1>
+                </always_for>
+            </captcha>
+        </customer>
+		<captcha translate="label">
+            <frontend>
+                <areas>
+                    <sgform_captcha_form_1>
+                        <label>Syncit Group Custom Contact Form </label>
+                    </sgform_captcha_form_1>
+                </areas>
+            </frontend>
+        </captcha>
+    </default>
+</config>
