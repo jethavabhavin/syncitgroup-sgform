@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+ * @category  Syncit Group Custom Contact Form
+ * @package   SyncitGroup_SgForm
+ * @copyright Copyright (c) 2021 Bhavin
+ * @author    Bhavin
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sgform_contacts" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+		<column xsi:type="int" name="customer_id" default="0" nullable="true" />        
+        <column xsi:type="int" name="store_id" default="0" nullable="true" />        
+		<column xsi:type="varchar" name="ip" default="" length="255"  nullable="true" />        
+        <column xsi:type="varchar" name="email" nullable="true" comment="Customer Email"/>
+        <column xsi:type="varchar" name="name" nullable="true" comment="Customer Name"/>
+        <column xsi:type="varchar" name="message" nullable="true" comment="Customer Message"/>
+        <column xsi:type="int" name="status" nullable="true" default="0" comment="Status"/>
+		<column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP" nullable="true"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
