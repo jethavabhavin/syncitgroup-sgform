@@ -1,0 +1,38 @@
+<div class="sgform" id="sgform">
+	<div class="box-contact">
+		<div class="sgform-form">
+			<form action="<?php  echo $this->getFormUrl()?>" method="post" id="sgform-form">
+				<input type="hidden" value="<?php  echo $this->getFormKey();?>" name="form_key"/>
+				<fieldset class="fieldset">					
+					<div class="field required">
+						<label class="label" for="name"> <?php  echo __('Name')?> : </label>
+						<div class="control">
+							<input type="text" id="name" class="input-text" required aria-required="true" value="<?php  echo trim($this->getCustomerName())?>" name="name">
+						</div>						
+					</div>
+					<div class="field required">
+						<label class="label" for="email"><?php  echo __('Email')?>:</label> 
+						<div class="control">
+							<input type="email" id="email" name="email" class="input-text" required aria-required="true"  value="<?php  echo $this->getCustomerEmail()?>">							
+						</div>
+					</div>
+					<div class="field required">
+						<label  class="label" for="message"><?php  echo __('Your Message')?></label> 
+						<div class="control">
+							<textarea name="message" id="message" maxlength="<?php  echo $this->getQuestionMaxCharacter()?>" minlength="15" required class="input-text" aria-required="true"></textarea>					
+						</div>
+					</div>
+				</fieldset>
+				<?php  echo $this->getChildHtml('sgcaptcha'); ?>
+				<div class="actions-toolbar"> 
+					<div class="primary actions-primary">
+						<button type="submit" required class="submit primary action"><span><?php  echo __('Submit')?></span></button>
+					</div>
+				</div>
+			</form>			
+		</div>
+	</div>
+</div>
+<script>
+require(['sgform'],function($){});
+</script>

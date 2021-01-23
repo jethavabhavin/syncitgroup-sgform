@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Syncit Group Custom Contact Form
+ * @package   SyncitGroup_SgForm
+ * @copyright Copyright (c) 2021 Bhavin
+ * @author    Bhavin
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Contact Us</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="SyncitGroup\SgForm\Block\ContactForm" name="contactForm" template="SyncitGroup_SgForm::form.phtml">
+                <container name="form.additional.info" label="Form Additional Info">
+                    <block class="Magento\Captcha\Block\Captcha" name="captcha" after="-" cacheable="false">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">sgform</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                </container>
+                <container name="sgcaptcha" label="Captcha">
+                    <block class="Magento\Captcha\Block\Captcha" name="captcha" after="-" cacheable="false" ifconfig="sgform/general/captcha">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">sgform_captcha_form_1</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
